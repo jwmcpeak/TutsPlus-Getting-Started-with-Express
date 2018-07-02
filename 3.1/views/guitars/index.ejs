@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./../partials/head %>
+    <title>My Guitars</title>
+</head>
+<body>
+    <% include ./../partials/header %>
+    <main>
+        <h2>Guitars</h2>
+
+        <% guitars.forEach((guitar) => { %>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="img-fluid" src="./img/guitars/<%= guitar.id %>.jpg" />
+                </div>
+                <div class class="col-sm-8">
+                    <h4>
+                        <a href="/guitars/<%= guitar.id %>"><%= guitar.name %></a>
+                    </h4>
+                    <ul>
+                        <li><%= guitar.manufacturer %></li>
+                        <li><%= guitar.year %></li>
+                    </ul>
+                </div>
+            </div>
+        
+        <% }) %>
+    </main>
+</body>
+</html>
